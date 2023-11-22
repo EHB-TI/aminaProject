@@ -75,6 +75,18 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="contact.html">Contact Us</a>
                               </li>
+                              @auth
+                              <li class="nav-item">
+                                 <a class="nav-link" href="contact.html">Logout</a>
+                              </li>
+                              @else
+                              <li class="nav-item">
+                                 <a class="nav-link" href="login.blade.php">Login</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="contact.html">Register</a>
+                              </li>
+                              @endauth
                            </ul>
                         </div>
                      </nav>
