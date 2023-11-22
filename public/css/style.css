@@ -268,7 +268,7 @@ button {
 .logo::before {
      position: absolute;
      content: "";
-     background-color: #2e2d2d;
+     background-color: black;
      width: 385px;
      height: 86px;
      left: -75px;
@@ -342,7 +342,7 @@ ul.social_icon li a:hover {
 .banner_main::before {
      position: absolute;
      content: "";
-     background-color: #2e2d2d;
+     background-color: black;
      width: 370px;
      height: 764px;
      left: 0;
@@ -400,7 +400,7 @@ ul.social_icon li a:hover {
 #myCarousel .carousel-control-next {
      width: 55px;
      height: 55px;
-     background: #2e2d2d;
+     background: black;
      opacity: 1;
      font-size: 20px;
      color: #ffffff;
@@ -412,7 +412,7 @@ ul.social_icon li a:hover {
 #myCarousel .carousel-control-prev:focus,
 #myCarousel .carousel-control-next:focus {
      background: #ececec;
-     color: #2e2d2d;
+     color: black;
 }
 
 #myCarousel .carousel-control-prev {

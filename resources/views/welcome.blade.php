@@ -35,7 +35,7 @@
    <body class="main-layout">
       <!-- loader  -->
       <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+         <div class="loader"><img src="images/logo.gif" alt="#"/></div>
       </div>
       <!-- end loader -->
       <!-- header -->
@@ -48,7 +48,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                              <a href="index.html"><img src="images/logoAL.gif" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -67,7 +67,7 @@
                                  <a class="nav-link" href="about.html">About</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="we-do.html">What we do</a>
+                                 <a class="nav-link" href="we-do.html">What i do</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="pricing.html">Pricing</a>
@@ -78,14 +78,6 @@
                            </ul>
                         </div>
                      </nav>
-                  </div>
-                  <div class="col-md-2">
-                     <ul class="social_icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                     </ul>
                   </div>
                </div>
             </div>
@@ -107,12 +99,12 @@
                      <div class="carousel-caption relative">
                         <div class="row d_flex">
                            <div class="col-md-6">
-                              <img class="bann_img" src="images/banner_ing.jpg" alt="#"/>
+                              <img class="bann_img" src="images/lashesOne.jpg" alt="#"/>
                            </div>
                            <div class="col-md-6">
                               <span>01/03</span>
-                              <h1>Milina nail Salon Creating Beauty</h1>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                              <h1>Amina Lashes Salon </h1>
+                              <p>come and embellish your beautiful eyes </p>
                               <a class="get_btn" href="Javascript:void(0)" role="button">Get Appoinment</a>
                            </div>
                         </div>
@@ -124,12 +116,12 @@
                      <div class="carousel-caption relative">
                         <div class="row d_flex">
                            <div class="col-md-6">
-                              <img class="bann_img" src="images/banner_ing.jpg" alt="#"/>
+                              <img class="bann_img" src="images/lashesOne.jpg" alt="#"/>
                            </div>
                            <div class="col-md-6">
                               <span>02/03</span>
-                              <h1>Milina nail Salon Creating Beauty</h1>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                              <h1>Amina Lashes Salon </h1>
+                              <p>come and embellish your beautiful eyes </p>
                               <a class="get_btn" href="Javascript:void(0)" role="button">Get Appoinment</a>
                            </div>
                         </div>
@@ -141,12 +133,12 @@
                      <div class="carousel-caption relative">
                         <div class="row d_flex">
                            <div class="col-md-6">
-                              <img class="bann_img" src="images/banner_ing.jpg" alt="#"/>
+                              <img class="bann_img" src="images/lashesOne.jpg" alt="#"/>
                            </div>
                            <div class="col-md-6">
                               <span>03/03</span>
-                              <h1>Milina nail Salon Creating Beauty</h1>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo</p>
+                              <h1>Amina Lashes Salon </h1>
+                              <p>come and embellish your beautiful eyes </p>
                               <a class="get_btn" href="Javascript:void(0)" role="button">Get Appoinment</a>
                            </div>
                         </div>
@@ -165,13 +157,13 @@
          </div>
       </section>
       <!-- end banner -->
-      <!-- what we do  -->
+      <!-- what I do  -->
       <div class="we_do slin">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>What We Do </h2>
+                     <h2>What I Do </h2>
                   </div>
                </div>
             </div>
@@ -180,30 +172,30 @@
                   <div class="row">
                      <div class="col-md-3 col-sm-6">
                         <div class="we_box">
-                           <i><img src="images/weicon1.png" alt="#"/></i>
-                           <h3>Nail Art</h3>
-                           <p>Lorem ipsum dolor sit amet, consectetur </p>
+                           <i><img src="images/cac.png" alt="#"/></i>
+                           <h3>natural eyelashes</h3>
+                           <p>to get longer lashes  </p>
                         </div>
                      </div>
                      <div class="col-md-3 col-sm-6">
                         <div class="we_box">
-                           <i><img src="images/weicon2.png" alt="#"/></i>
-                           <h3>Manicure</h3>
-                           <p>Lorem ipsum dolor sit amet, consectetur </p>
+                           <i><img src="images/volumeR.png" alt="#"/></i>
+                           <h3>4D volume</h3>
+                           <p>4 synthetic lashes glued to 1 natural lash, light Russian volume effect </p>
                         </div>
                      </div>
                      <div class="col-md-3 col-sm-6">
                         <div class="we_box">
-                           <i><img src="images/weicon3.png" alt="#"/></i>
-                           <h3>Pedicure</h3>
-                           <p>Lorem ipsum dolor sit amet, consectetur </p>
+                           <i><img src="images/extraVolume.png" alt="#"/></i>
+                           <h3>brazilian volume</h3>
+                           <p>a voluminous natural result </p>
                         </div>
                      </div>
                      <div class="col-md-3 col-sm-6">
                         <div class="we_box">
-                           <i><img src="images/weicon4.png" alt="#"/></i>
-                           <h3>Paraffin wax</h3>
-                           <p>Lorem ipsum dolor sit amet, consectetur </p>
+                           <i><img src="images/lashesUit.png" alt="#"/></i>
+                           <h3>eyelash removal</h3>
+                           <p>to make sure you don't lose your eyelashes  </p>
                         </div>
                      </div>
                   </div>
@@ -211,7 +203,7 @@
             </div>
          </div>
       </div>
-      <!-- end what we do  -->
+      <!-- end what I do  -->
       <!-- about -->
       <div class="about slin2">
          <div class="container">
@@ -377,7 +369,7 @@
                <div class="col-md-12">
                   <div class="map_main">
                      <div class="map-responsive">
-                        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="386" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20155.216290837117!2d4.284699174316399!3d50.84223899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c40f19faf0f9%3A0x4ef5b683135ecb1e!2sErasmushogeschool%20Brussel!5e0!3m2!1sfr!2sbe!4v1700649119673!5m2!1sfr!2sbe" width="600" height="386" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
                      </div>
                   </div>
                </div>
