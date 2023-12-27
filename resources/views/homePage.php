@@ -84,7 +84,7 @@
                                  <a class="nav-link" href="login.blade.php">Login</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Register</a>
+                                 <a class="nav-link" href="register.blade.php">Register</a>
                               </li>
                               @endauth
                            </ul>
@@ -432,9 +432,7 @@
             <div class="copyright">
                <div class="container">
                   <div class="row">
-                     <div class="col-md-10 offset-md-1">
-                        <p>© 2019 All Rights Reserved. Design by  <a href="https://html.design/"> Free Html Templates</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a></p>
-                     </div>
+                    
                   </div>
                </div>
             </div>
