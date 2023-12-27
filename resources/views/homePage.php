@@ -61,23 +61,23 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item active">
-                                 <a class="nav-link" href="index.html">Home</a>
+                                 <a class="nav-link" href="homePage.php">Home</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="about.html">About</a>
+                                 <a class="nav-link" href="{{ route('about') }}">About</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="we-do.html">What i do</a>
+                                 <a class="nav-link" href="we-do.php">What i do</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="pricing.html">Pricing</a>
+                                 <a class="nav-link" href="pricing.php">Pricing</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Contact Us</a>
+                                 <a class="nav-link" href="contact.php">Contact Us</a>
                               </li>
                               @auth
                               <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Logout</a>
+                                 <a class="nav-link" href="contact.php">Logout</a>
                               </li>
                               @else
                               <li class="nav-item">
