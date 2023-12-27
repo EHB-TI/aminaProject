@@ -18,17 +18,34 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    // Home Page Route
+Route::get('/', function () {
+    return view('home');
+})->name('home');
 
-    Route::get('/home', function () {return view('/homePage');});
-    Route::get('/about', function () {
-        return view('about');
-    })->name('about');
-    Route::get('/we-do', function () {   return view('/we-do');});
-    Route::get('/pricing', function () {return view('/pricing');});
-    Route::get('/contact', function () {return view('/contact');});
-    Route::get('/admin', function () {return view('/admin');});
-    
+// About Page Route
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+// What We Do Page Route
+Route::get('/we-do', function () {
+    return view('we-do');
+})->name('we-do');
+
+// Pricing Page Route
+Route::get('/pricing', function () {
+    return view('pricing');
+})->name('pricing');
+
+// Contact Us Page Route
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+
 });
+
 
 
 
