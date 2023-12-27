@@ -14,14 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('/homePage');
+    return view('/home-Page');
 });
 
 Route::middleware(['auth'])->group(function () {
-    // Home Page Route
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+
+
+
+});
 
 // About Page Route
 Route::get('/about', function () {
@@ -43,8 +43,14 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
 
-});
+// Registratie
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
 
 
 
