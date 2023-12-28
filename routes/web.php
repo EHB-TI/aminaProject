@@ -22,6 +22,9 @@ Route::middleware(['auth'])->group(function () {
 
 
 });
+Route::get('/', function () {
+    return view('index');
+})->name('home');
 
 // About Page Route
 Route::get('/about', function () {

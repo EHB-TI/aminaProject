@@ -61,7 +61,7 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item active">
-                                 <a class="nav-link" href="home-Page">Home</a>
+                                 <a class="nav-link" href="{{ route('home') }}">Home</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('about') }}">About</a>
@@ -243,65 +243,7 @@
          </div>
       </div>
       <!-- end about -->
-      <!-- our pricing -->
-      <div  class="pricing slin">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Our Pricing</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>20</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>natural eyelashes</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>30</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>4D volume</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>40</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>brazilian volume</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>10</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>eyelash removal</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end our pricing -->
+      
       <!-- experts -->
       <div  class="experts slin2">
          <div class="container">
@@ -348,62 +290,13 @@
                            </div>
                         </div>
                      </div>
-                     <div class="col-md-12">
-                        <a class="read_more mar_top exper" href="Javascript:void(0)"> Read More</a>
-                     </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
       <!-- end experts -->
-      <!--  contact -->
-      <div class="contact">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Get In Touch</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-6 offset-md-3">
-                  <form id="request" class="main_form">
-                     <div class="row">
-                        <div class="col-md-12 ">
-                           <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> 
-                        </div>
-                        <div class="col-md-12">
-                           <input class="contactus" placeholder="Email " type="type" name="Email "> 
-                        </div>
-                        <div class="col-md-12">
-                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
-                        </div>
-                        <div class="col-md-12">
-                           <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message</textarea>
-                        </div>
-                        <div class="col-md-12">
-                           <button class="send_btn">Send</button>
-                        </div>
-                     </div>
-                  </form>
-               </div>
-            </div>
-         </div>
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="map_main">
-                     <div class="map-responsive">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20155.216290837117!2d4.284699174316399!3d50.84223899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c40f19faf0f9%3A0x4ef5b683135ecb1e!2sErasmushogeschool%20Brussel!5e0!3m2!1sfr!2sbe!4v1700649119673!5m2!1sfr!2sbe" width="600" height="386" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end contact -->
+      
       <!--  footer -->
       <footer>
          <div class="footer">
@@ -428,10 +321,9 @@
                      <h3>Useful Link</h3>
                      <ul class="link_menu">
                         <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="about.html"> About</a></li>
-                        <li><a href="we-do.html">What we do</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="{{ route('about') }}"> About</a></li>
+                        <li><a href="{{ route('we-do') }}">What we do</a></li>
+                        <li><a href="{{ route('pricing') }}">Pricing</a></li>
                      </ul>
                   </div>
                </div>

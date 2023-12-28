@@ -48,7 +48,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                              <a href="index.html"><img src="images/logoAL.gif" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -60,32 +60,43 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
-                              <li class="nav-item ">
-                                 <a class="nav-link" href="index.html">Home</a>
-                              </li>
                               <li class="nav-item active">
-                                 <a class="nav-link" href="about.html">About</a>
+                                 <a class="nav-link" href="home-Page">Home</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="we-do.html">What we do</a>
+                                 <a class="nav-link" href="{{ route('about') }}">About</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="pricing.html">Pricing</a>
+                                 <a class="nav-link" href="{{ route('we-do') }}">What We do</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="contact.html">Contact Us</a>
+                                 <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                               </li>
+
+                              @auth
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                 </a>
+                                 <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
+                              </li>
+                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                 </form>
+                              </li>
+                              @else
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('login') }}">Login</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('register') }}">Register</a>
+                              </li>
+                              @endauth
                            </ul>
                         </div>
                      </nav>
-                  </div>
-                  <div class="col-md-2">
-                     <ul class="social_icon">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                     </ul>
                   </div>
                </div>
             </div>
@@ -112,13 +123,12 @@
                <div class="col-md-6">
                   <div class="titlepage">
                      <h2>About Us</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                     <a class="read_more" href="Javascript:void(0)"> Read More</a>
+                     <p>who are we? We are three sisters who share the same hobby. I, Amina, took the responsibility of opening our own eyelash extension salon with the goal that my sister and I would improve together in the eyelash industry. the goal is of course to make our salon grow and without you it will not be possible without you.</p>
                   </div>
                </div>
                <div class="col-md-6">
                   <div class="about_img">
-                     <figure><img src="images/about.png" alt="#"/></figure>
+                     <figure><img src="images/aboutG.png" alt="#"/></figure>
                   </div>
                </div>
             </div>
@@ -133,45 +143,27 @@
                <div class="row">
                   <div class="col-md-12">
                      <ul class="conta">
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Passages of Lorem Ipsum available</li>
-                        <li><i class="fa fa-phone" aria-hidden="true"></i> Call : +012334567890</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> demo@gmail.com</a></li>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>Quai de l'Industrie 170, 1070 Anderlecht</li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 0488714235</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> LashesByeAmina@gmail.com</a></li>
                      </ul>
                   </div>
                   <div class=" col-md-3 col-sm-6">
-                     <h3>About </h3>
-                     <p class="variat">There are many variations of passages of Lorem Ipsum available, but the majority have suffered le</p>
+                     <h3>Welcome</h3>
+                     <p class="variat">you will always be welcome in our beauty salon</p>
                   </div>
                   <div class=" col-md-3 col-sm-6">
-                     <h3>Nail Salon  </h3>
-                     <p class="variat" >There are many variations of passages of Lorem Ipsum available, but the majority have suffered le</p>
+                     <h3>Lashes Salon </h3>
+                     <p class="variat" >always present to have a beautiful look</p>
                   </div>
                   <div class="col-md-2 col-sm-6">
                      <h3>Useful Link</h3>
                      <ul class="link_menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><a href="about.html"> About</a></li>
-                        <li><a href="we-do.html">What we do</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="{{ route('about') }}"> About</a></li>
+                        <li><a href="{{ route('we-do') }}">What we do</a></li>
+                        <li><a href="{{ route('pricing') }}">Pricing</a></li>
                      </ul>
-                  </div>
-                  <div class="col-md-4 col-sm-6">
-                     <h3>Subscribe</h3>
-                     <form class="bottom_form">
-                        <a class="right_btn" href="Javascript:void(0)"> <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
-                        <p >There are many variations of passages </p>
-                     </form>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-10 offset-md-1">
-                        <p>© 2019 All Rights Reserved. Design by  <a href="https://html.design/"> Free Html Templates</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a></p>
-                     </div>
                   </div>
                </div>
             </div>
