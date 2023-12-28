@@ -1,7 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+     
 <div class="container">
+         <!-- header inner -->
+         <div class="header login-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col logo_section login-logo">
+                        <a href="{{ url('/') }}"><img src="{{ asset('images/logoAL.gif') }}" alt="Logo" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

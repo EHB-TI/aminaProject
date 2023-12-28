@@ -998,3 +998,147 @@ ul.link_menu li a:hover {
 .margin_0 {
      margin: 0 !important;
 }
+
+/**begin login**/
+ html, body {
+     height: 100%;
+     font-family: 'Nunito', sans-serif;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: #f4f4f4; /* of een andere kleur die je prefereert */
+ }
+ 
+ /* Verwijder standaard browser styling van formulier elementen */
+ input, button {
+     outline: none;
+     border: none;
+ }
+ 
+ /* Stijlen voor de login card */
+ .card {
+     width: 100%;
+     max-width: 500px; /* Breder dan eerder */
+     margin: auto;
+     border-radius: 10px;
+     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+     overflow: hidden;
+     background-color: #fff;
+ }
+ 
+ /* Header van de card */
+ .card-header {
+     background-color: #333;
+     color: #fff;
+     padding: 35px;
+     font-size: 2em; /* Grotere tekst */
+     text-align: center;
+ }
+ 
+ /* Body van de card */
+ .card-body {
+     padding: 40px 20px; /* Meer padding voor een groter effect */
+ }
+ 
+ /* Stijlen voor inputs */
+ input[type=email], input[type=password] {
+     width: calc(100% - 20px);
+     padding: 15px; /* Grotere input velden */
+     margin-bottom: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     font-size: 1em;
+ }
+ 
+ /* Stijlen voor de knop */
+ button[type=submit] {
+     width: 100%;
+     padding: 15px; /* Grotere en dikkere knop */
+     font-size: 1em;
+     border-radius: 5px;
+     background-color: #333;
+     color: white;
+     cursor: pointer;
+     transition: background-color 0.3s;
+ }
+ 
+ button[type=submit]:hover {
+     background-color: #444; /* Donkerder bij hover */
+ }
+ 
+ /* Stijlen voor links */
+ a.btn-link {
+     color: #333;
+     text-decoration: none;
+     margin-top: 15px; /* Ruimte boven de link */
+     display: inline-block;
+     font-size: 1em;
+ }
+ 
+ a.btn-link:hover {
+     color: #444;
+ }
+ 
+ /* Stijlen voor het 'Onthoud mij' checkbox */
+ .form-check {
+     margin-top: 20px;
+ }
+ 
+ /* Stijlen voor de foutmeldingen */
+ .invalid-feedback {
+     color: red;
+     font-size: 0.9em;
+     display: block; /* Zorgt ervoor dat het als block wordt getoond */
+     margin-top: 5px;
+ }
+ 
+ .login-logo a img {
+     max-width: 100%; /* Zorg ervoor dat het logo niet te groot wordt */
+     height: auto;
+     /* Voeg eventuele specifieke stijlen toe die je wilt */
+ }
+ 
+ /* Stijlen specifiek voor de loginpagina navigatie-links */
+ .login-nav {
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     list-style-type: none; /* Verwijdert bullet points */
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .login-nav .nav-item {
+     margin-left: 20px; /* Voegt ruimte toe tussen de items */
+ }
+ 
+ .login-nav .nav-item a {
+     color: #fff; /* Witte tekst */
+     background-color: #333; /* Donkere achtergrond */
+     padding: 10px 15px;
+     border-radius: 5px; /* Ronde hoeken */
+     text-decoration: none; /* Verwijdert onderstreping */
+     transition: background-color 0.3s; /* Gladde hover effect */
+ }
+ 
+ .login-nav .nav-item a:hover {
+     background-color: #444; /* Donkere achtergrond op hover */
+ }
+ 
+ /* Specifieke stijlen voor de dropdown-menu */
+ .login-nav .dropdown-menu {
+     right: 0; /* Zorgt ervoor dat het dropdown-menu rechts uitgelijnd is */
+ }
+ 
+ /* Stijlen voor de 'Logout' link */
+ .login-nav .dropdown-item {
+     color: #333; /* Donkere tekst */
+     background-color: #f8f9fa; /* Lichte achtergrond */
+     padding: 10px 20px;
+ }
+ 
+ .login-nav .dropdown-item:hover {
+     background-color: #e9ecef; /* Nog lichtere achtergrond op hover */
+ }
+/**end login**/
+ 
