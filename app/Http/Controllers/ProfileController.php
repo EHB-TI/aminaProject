@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+
 use Illuminate\Http\Request;
-use Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Auth;
+
 
 class ProfileController extends Controller
 {
     // Deze methode toont de profielpagina
     public function showProfile()
     {
-       $user = Auth::user(); // Haal de huidige ingelogde gebruiker op
+        $user = Auth::User(); // Haal de huidige ingelogde gebruiker op
         // Stuur de gebruikersinformatie en de editMode-status naar de view 
         $editMode = true; // Stel deze in op 'true' of 'false' afhankelijk van de voorwaarde die je wilt controleren
         

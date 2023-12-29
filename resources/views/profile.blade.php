@@ -154,11 +154,11 @@
       <!-- Toon gebruikersinformatie zonder invulvelden -->
       <div class="profile-info">
          <img src="{{ asset('storage/' . $user -> profile_photo) }}" alt="Profielfoto">
-         <p>Naam: {{ $user -> firstname }}</p>
-         <p>Voornaam: {{ $user -> lastname }}</p>
-         <p>Geboortedatum: {{ $user -> birthdate }}</p>
-         <p>Geslacht: {{ $user -> sex }}</p>
-         <p>Biografie: {{ $user -> biography }}</p>
+         <p>Naam: {{ $user->firstname }}</p>
+         <p>Voornaam: {{ $user->lastname }}</p>
+         <p>Geboortedatum: {{ $user->birthdate }}</p>
+         <p>Geslacht: {{ $user->sex }}</p>
+         <p>Biografie: {{ $user->biography }}</p>
       </div>
    @endif
 
