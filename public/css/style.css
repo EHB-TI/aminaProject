@@ -1000,13 +1000,13 @@ ul.link_menu li a:hover {
 }
 
 /**begin login**/
- html, body {
+.auth-page {
      height: 100%;
      font-family: 'Nunito', sans-serif;
      display: flex;
      justify-content: center;
      align-items: center;
-     background-color: #f4f4f4; /* of een andere kleur die je prefereert */
+     background-color: #f4f4f4; 
  }
  
  /* Verwijder standaard browser styling van formulier elementen */
@@ -1142,3 +1142,48 @@ ul.link_menu li a:hover {
  }
 /**end login**/
  
+/**begin profile**/
+.profile-form {
+     max-width: 500px;
+     margin: 0 auto;
+     padding: 15px;
+     background: #fff;
+     border-radius: 8px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .profile-form .form-group {
+     margin-bottom: 15px;
+ }
+ 
+ .profile-form .form-group label {
+     display: block;
+     margin-bottom: 5px;
+ }
+ 
+ .profile-form .form-control {
+     width: 100%;
+     padding: 10px;
+     border: 1px solid #ddd;
+     border-radius: 4px;
+     box-sizing: border-box;
+ }
+ 
+ .profile-form .form-control-file {
+     border: none;
+ }
+ 
+ .profile-form .btn-primary {
+     color: #fff;
+     background-color: #444;
+     border-color: #444;
+     padding: 10px 20px;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+ 
+ .profile-form .btn-primary:hover {
+     background-color: #444;
+ }
+
+ /**end profile**/

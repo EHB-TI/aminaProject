@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<body class="auth-page">
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
 <div class="container">
 <div class="header login-header">
             <div class="container-fluid">
@@ -85,4 +87,5 @@
         </div>
     </div>
 </div>
+</body>
 @endsection

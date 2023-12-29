@@ -35,13 +35,11 @@
    <body class="main-layout">
       <!-- loader  -->
       <div class="loader_bg">
-      <div class="loader"><img src="images/logo.gif" alt="#"/></div>
+         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
       </div>
       <!-- end loader -->
       <!-- header -->
-      <header>
-         <!-- header inner -->
-         <div class="header">
+      <div class="header">
             <div class="container-fluid">
                <div class="row">
                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
@@ -101,111 +99,72 @@
       </header>
       <!-- end header inner -->
       <!-- end header -->
-      <!-- banner -->
-      <div class="back_re">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="title">
-                     <h2>Our Pricing</h2>
-                  </div>
-               </div>
-            </div>
-         </div>
+    @php
+         $editMode = $editMode ?? false; 
+    @endphp
+
+   
+      @if ($editMode)
+
+      <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data" class="profile-form">
+    @csrf
+    
+      <!-- Foto Upload -->
+      <div class="form-group">
+         <label for="profile_photo">Profielfoto</label>
+         <input type="file" name="profile_photo" class="form-control-file">
       </div>
-      <!-- our pricing -->
-      <div  class="pricing slin">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Our Pricing</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>20</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>natural eyelashes</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>30</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>4D volume</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>40</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>brazilian volume</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>10</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>eyelash removal</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-            </div>
-         </div>
+      
+      
+      <!-- Naam en Voornaam -->
+      <div class="form-group">
+         <label for="firstname">Voornaam</label>
+         <input type="text" name="firstname" class="form-control">
       </div>
-      <!-- end our pricing -->
-     
-      <!--  footer -->
-      <footer>
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <ul class="conta">
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>Quai de l'Industrie 170, 1070 Anderlecht</li>
-                        <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 0488714235</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> LashesByeAmina@gmail.com</a></li>
-                     </ul>
-                  </div>
-                  <div class=" col-md-3 col-sm-6">
-                     <h3>Welcome</h3>
-                     <p class="variat">you will always be welcome in our beauty salon</p>
-                  </div>
-                  <div class=" col-md-3 col-sm-6">
-                     <h3>Lashes Salon </h3>
-                     <p class="variat" >always present to have a beautiful look</p>
-                  </div>
-                  <div class="col-md-2 col-sm-6">
-                     <h3>Useful Link</h3>
-                     <ul class="link_menu">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="{{ route('about') }}"> About</a></li>
-                        <li><a href="{{ route('we-do') }}">What we do</a></li>
-                        <li><a href="{{ route('pricing') }}">Pricing</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
+      <div class="form-group">
+         <label for="lastname">Naam</label>
+         <input type="text" name="lastname" class="form-control">
+      </div>
+      <div cla
+      ss="form-group">
+         <label for="birthdate">Geboortedatum</label>
+         <input type="date" name="birthdate" class="form-control">
+      </div>
+      <div class="form-group">
+         <label for="sex">Geslacht</label>
+         <select name="sex" class="form-control">
+               <option value="male">Man</option>
+               <option value="female">Vrouw</option>
+               <option value="other">Overig</option>
+         </select>
+      </div>
+      
+      <!-- Biografie -->
+      <div class="form-group">
+         <label for="biography">Biografie</label>
+         <textarea name="biography" class="form-control"></textarea>
+      </div>
+      
+      <!-- Geslacht -->
+      
+      <!-- Verzendknop -->
+      <button type="submit" class="btn btn-primary">Profiel bijwerken</button>
+
+   @else
+      <!-- Toon gebruikersinformatie zonder invulvelden -->
+      <div class="profile-info">
+         <img src="{{ asset('storage/' . $user -> profile_photo) }}" alt="Profielfoto">
+         <p>Naam: {{ $user -> firstname }}</p>
+         <p>Voornaam: {{ $user -> lastname }}</p>
+         <p>Geboortedatum: {{ $user -> birthdate }}</p>
+         <p>Geslacht: {{ $user -> sex }}</p>
+         <p>Biografie: {{ $user -> biography }}</p>
+      </div>
+   @endif
+
+   </form>
+</form>
+      <!-- end contact -->
       <!-- end footer -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
@@ -215,5 +174,6 @@
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
    </body>
+
 </html>
 

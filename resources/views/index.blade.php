@@ -73,18 +73,15 @@
                                  <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                               </li>
 
-                              @auth
+                              @auth 
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('profile') }}">Profile</a>
+                              </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     Logout
                                  </a>
-                                 <li class="nav-item">
-                                 <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
-                              </li>
-                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                 </form>
                               </li>
                               @else
                               <li class="nav-item">
@@ -296,7 +293,18 @@
          </div>
       </div>
       <!-- end experts -->
-      
+      <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="map_main">
+                     <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20155.216290837117!2d4.284699174316399!3d50.84223899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c40f19faf0f9%3A0x4ef5b683135ecb1e!2sErasmushogeschool%20Brussel!5e0!3m2!1sfr!2sbe!4v1700649119673!5m2!1sfr!2sbe" width="600" height="386" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
       <!--  footer -->
       <footer>
          <div class="footer">
