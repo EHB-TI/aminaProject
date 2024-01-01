@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -34,11 +33,13 @@
    <body class="main-layout">
       <!-- loader  -->
       <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+         <div class="loader"><img src="images/logo.gif" alt="#"/></div>
       </div>
       <!-- end loader -->
       <!-- header -->
-      <div class="header">
+      <header>
+         <!-- header inner -->
+         <div class="header">
             <div class="container-fluid">
                <div class="row">
                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
@@ -69,13 +70,14 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                               </li>
+
                               @auth 
                               <li class="nav-item">
                               <a class="nav-link" href="{{ route('comments') }}">comments</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('profile') }}">Profile</a>
-                            </li>
+                              </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -99,16 +101,19 @@
          </div>
       </header>
       <div class="container">
+    
+  
+  
     <h1>Comments</h1>
   
-    @auth
-        <form action="{{ route('comments.store') }}" method="POST">
-            @csrf
-            <div class="form-group">
-                <label for="body">our comments</label>
-                <textarea name="body" id="body" rows="3" class="form-control"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">send</button>
-        </form>
-    @endauth
+  @auth
+      <form action="{{ route('comments.store') }}" method="POST">
+          @csrf
+          <div class="form-group">
+              <label for="body">our comments</label>
+              <textarea name="body" id="body" rows="3" class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">send</button>
+      </form>
+  @endauth
 </div>
