@@ -33,9 +33,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/profile', 'ProfileController@showProfile')->name('profile');
     Route::post('/profile/update', 'ProfileController@updateProfile')->name('profile.update');
-    Route::post('/profile', 'ProfileController@updateProfile')->name('profile.update')->middleware('auth');
+    Route::post('/profile', 'ProfileController@updateProfile')->name('profile.update');
 
-    Route::get('/comments', 'CommentController@index')->name('comments.index');
     Route::post('/comments', 'CommentController@store')->name('comments.store')->middleware('auth');
 
 

@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
 use Illuminate\Http\Request;
+use App\Models\Comment;
 use Auth;
 
 class CommentController extends Controller
 {
-    public function index() {
-        $comments = Comment::with('user')->get();
-        return view('comments.index', compact('comments'));
-    }
-
     public function store(Request $request) {
         $request->validate([
             'body' => 'required|string',
         ]);
-
-        Auth::user()->comments()->create($request->only('body'));
-
-        return back()->with('success', 'Commentaar toegevoegd!');
+    
+        Comment::create([
+            'body' => $request->body,
+            'user_id' => Auth::id(),
+        ]);
+    
+        return back()->with('success', 'Commentaar succesvol toegevoegd!');
     }
 }

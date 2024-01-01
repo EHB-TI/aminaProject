@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -68,7 +69,6 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                               </li>
-
                               @auth 
                               <li class="nav-item">
                               <a class="nav-link" href="{{ route('comments') }}">comments</a>
@@ -99,17 +99,16 @@
          </div>
       </header>
       <div class="container">
-    <h1>Commentaren</h1>
+    <h1>Comments</h1>
   
-
     @auth
         <form action="{{ route('comments.store') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="body">Uw commentaar</label>
+                <label for="body">our comments</label>
                 <textarea name="body" id="body" rows="3" class="form-control"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Commentaar plaatsen</button>
+            <button type="submit" class="btn btn-primary">send</button>
         </form>
     @endauth
 </div>
