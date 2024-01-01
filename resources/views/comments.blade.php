@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -34,6 +32,11 @@
    <!-- body -->
    <body class="main-layout">
       <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
       <div class="header">
             <div class="container-fluid">
                <div class="row">
@@ -72,7 +75,7 @@
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('profile') }}">Profile</a>
-                              </li>
+                            </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -95,106 +98,18 @@
             </div>
          </div>
       </header>
-      <!-- end header inner -->
-      <!-- end header -->
-     <div class="back_re">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="title">
-                     <h2>What We Do </h2>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- what we do  -->
-      <!-- what I do  -->
-      <div class="we_do slin">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-lg-10 offset-lg-1 col-md-12">
-                  <div class="row">
-                     <div class="col-md-3 col-sm-6">
-                        <div class="we_box">
-                           <i><img src="images/cac.png" alt="#"/></i>
-                           <h3>natural eyelashes</h3>
-                           <p>to get longer lashes  </p>
-                        </div>
-                     </div>
-                     <div class="col-md-3 col-sm-6">
-                        <div class="we_box">
-                           <i><img src="images/volumeR.png" alt="#"/></i>
-                           <h3>4D volume</h3>
-                           <p>4 synthetic lashes glued to 1 natural lash, light Russian volume effect </p>
-                        </div>
-                     </div>
-                     <div class="col-md-3 col-sm-6">
-                        <div class="we_box">
-                           <i><img src="images/extraVolume.png" alt="#"/></i>
-                           <h3>brazilian volume</h3>
-                           <p>a voluminous natural result </p>
-                        </div>
-                     </div>
-                     <div class="col-md-3 col-sm-6">
-                        <div class="we_box">
-                           <i><img src="images/lashesUit.png" alt="#"/></i>
-                           <h3>eyelash removal</h3>
-                           <p>to make sure you don't lose your eyelashes  </p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end what we do  -->
+      <div class="container">
+    <h1>Commentaren</h1>
+  
 
-      <!--  footer -->
-      <footer>
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <ul class="conta">
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>Quai de l'Industrie 170, 1070 Anderlecht</li>
-                        <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 0488714235</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> LashesByeAmina@gmail.com</a></li>
-                     </ul>
-                  </div>
-                  <div class=" col-md-3 col-sm-6">
-                     <h3>Welcome</h3>
-                     <p class="variat">you will always be welcome in our beauty salon</p>
-                  </div>
-                  <div class=" col-md-3 col-sm-6">
-                     <h3>Lashes Salon </h3>
-                     <p class="variat" >always present to have a beautiful look</p>
-                  </div>
-                  <div class="col-md-2 col-sm-6">
-                     <h3>Useful Link</h3>
-                     <ul class="link_menu">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="{{ route('about') }}"> About</a></li>
-                        <li><a href="{{ route('we-do') }}">What we do</a></li>
-                        <li><a href="{{ route('pricing') }}">Pricing</a></li>
-                     </ul>
-                  </div>
-               </div>
+    @auth
+        <form action="{{ route('comments.store') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="body">Uw commentaar</label>
+                <textarea name="body" id="body" rows="3" class="form-control"></textarea>
             </div>
-         </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
-</html>
-
+            <button type="submit" class="btn btn-primary">Commentaar plaatsen</button>
+        </form>
+    @endauth
+</div>

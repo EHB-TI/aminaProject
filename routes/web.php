@@ -35,6 +35,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/profile/update', 'ProfileController@updateProfile')->name('profile.update');
     Route::post('/profile', 'ProfileController@updateProfile')->name('profile.update')->middleware('auth');
 
+    Route::get('/comments', 'CommentController@index')->name('comments.index');
+    Route::post('/comments', 'CommentController@store')->name('comments.store')->middleware('auth');
 
 
 });
@@ -72,6 +74,10 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
+
+Route::get('/comments', function () {
+    return view('comments');
+})->name('comments');
 
 
 
