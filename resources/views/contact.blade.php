@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -35,7 +33,7 @@
    <body class="main-layout">
       <!-- loader  -->
       <div class="loader_bg">
-      <div class="loader"><img src="images/logo.gif" alt="#"/></div>
+         <div class="loader"><img src="images/logo.gif" alt="#"/></div>
       </div>
       <!-- end loader -->
       <!-- header -->
@@ -72,7 +70,8 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                               </li>
-                              
+
+                             
                               @auth 
                               <li class="nav-item">
                               <a class="nav-link" href="{{ route('comments') }}">comments</a>
@@ -119,80 +118,48 @@
             </div>
          </div>
       </header>
-      <!-- end header inner -->
       <!-- end header -->
-      <!-- banner -->
-      <div class="back_re">
+        <div class="back_re">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                     <h2>Our Pricing</h2>
+                      <h2>Get In Touch</h2>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- our pricing -->
-      <div  class="pricing slin">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Our Pricing</h2>
+      <!--  contact -->
+      <div class="contact">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6 offset-md-3">
+            <form id="request" class="main_form" action="{{ route('contact.send') }}" method="POST">
+               @csrf
+               <div class="row">
+                  <div class="col-md-12 ">
+                     <input class="contactus" placeholder="Full Name" type="text" name="full_name">
+                  </div>
+                  <div class="col-md-12">
+                     <input class="contactus" placeholder="Email" type="email" name="email">
+                  </div>
+                  <div class="col-md-12">
+                     <input class="contactus" placeholder="Phone Number" type="text" name="phone_number">
+                  </div>
+                  <div class="col-md-12">
+                     <textarea class="textarea" placeholder="Message" name="message">Message</textarea>
+                  </div>
+                  <div class="col-md-12">
+                     <button type="submit" class="send_btn">Send</button>
                   </div>
                </div>
-            </div>
-            <div class="row">
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>20</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>natural eyelashes</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>30</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>4D volume</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>40</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>brazilian volume</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-               <div class="col-md-4">
-                  <div class="pricing_box">
-                     <div class="pricing_box_ti">
-                        <h3> <span>€</span>10</h3>
-                     </div>
-                     <div class="our_pricing">
-                        <span>eyelash removal</span>
-                     </div>
-                  </div>
-                  <a class="read_more mar_top" href="Javascript:void(0)"> Book Now</a>
-               </div>
-            </div>
+            </form>
          </div>
       </div>
-      <!-- end our pricing -->
-     
+   </div>
+</div>
+      <!-- end contact -->
       <!--  footer -->
       <footer>
          <div class="footer">
@@ -236,4 +203,3 @@
       <script src="js/custom.js"></script>
    </body>
 </html>
-

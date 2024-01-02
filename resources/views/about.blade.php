@@ -59,7 +59,7 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item active">
-                                 <a class="nav-link" href="home-Page">Home</a>
+                                 <a class="nav-link" href="{{ route('home') }}">Home</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('about') }}">About</a>
@@ -70,7 +70,7 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                               </li>
-
+                  
                               @auth 
                               <li class="nav-item">
                               <a class="nav-link" href="{{ route('comments') }}">comments</a>
@@ -79,12 +79,24 @@
                                  <a class="nav-link" href="{{ route('profile') }}">Profile</a>
                               </li>
                               <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('faq') }}">FAQ</a>
+                              </li>
+                              <li class="nav-item">
                                  <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     Logout
                                  </a>
                               </li>
                               @else
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('faq') }}">FAQ</a>
+                              </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('login') }}">Login</a>
                               </li>

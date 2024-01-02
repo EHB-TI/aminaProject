@@ -72,24 +72,39 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                               </li>
-
-                              @auth
+                             
+                              @auth 
                               <li class="nav-item">
                               <a class="nav-link" href="{{ route('comments') }}">comments</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('profile') }}">Profile</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('faq') }}">FAQ</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     Logout
                                  </a>
-                                 <li class="nav-item">
-                                 <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
+                              </li>
                               </li>
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                  </form>
                               </li>
                               @else
+
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('faq') }}">FAQ</a>
+                              </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('login') }}">Login</a>
                               </li>

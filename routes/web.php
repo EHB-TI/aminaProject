@@ -2,17 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\CommentController;
 
 Route::get('/', function () {
     return view('/home-Page');
@@ -35,10 +27,17 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/profile/update', 'ProfileController@updateProfile')->name('profile.update');
     Route::post('/profile', 'ProfileController@updateProfile')->name('profile.update');
 
-    Route::post('/comments', 'CommentController@store')->name('comments.store')->middleware('auth');
+    Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
+    Route::get('/faq', [FaqController::class, 'showFaq'])->name('faq');
+
+    // Voor resourceful routes
+    Route::resource('faqs', FaqController::class);
+
+    Route::post('/comments', [CommentController::class, 'store'])->name('comment.store');
 
 
 });
+
 
 
 Route::get('/', function () {
@@ -78,7 +77,12 @@ Route::get('/comments', function () {
     return view('comments');
 })->name('comments');
 
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
 
-
+Route::get('/Faq', function () {
+    return view('faq');
+})->name('faq');
 
 Auth::routes();
