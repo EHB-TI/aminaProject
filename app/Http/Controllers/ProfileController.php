@@ -13,10 +13,17 @@ use Auth;
 
 class ProfileController extends Controller
 {
-    public function showProfile()
+
+    public function __construct()
     {
-        $user = Auth::User(); // Haal de huidige ingelogde gebruiker op
-        redirect ('profile', compact('user')); // Stuur naar de view
+        // Zorg ervoor dat de gebruiker ingelogd moet zijn om deze controller te gebruiken
+        $this->middleware('auth');
+    }
+
+    public function showProfile(User $user)
+    {
+         
+        return view ('profile', compact('user')); // Stuur naar de view
     }
 
 

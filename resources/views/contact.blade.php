@@ -169,7 +169,7 @@
                      <ul class="conta">
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i>Quai de l'Industrie 170, 1070 Anderlecht</li>
                         <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 0488714235</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> LashesByeAmina@gmail.com</a></li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> LashesByeAmina@hotmail.com</a></li>
                      </ul>
                   </div>
                   <div class=" col-md-3 col-sm-6">

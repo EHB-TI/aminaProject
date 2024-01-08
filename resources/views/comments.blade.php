@@ -9,7 +9,6 @@
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>Lashes By Amina</title>
-
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -71,8 +70,7 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                               </li>
-
-                             
+                            
                               @auth 
                               <li class="nav-item">
                               <a class="nav-link" href="{{ route('comments') }}">comments</a>
@@ -91,6 +89,11 @@
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     Logout
                                  </a>
+                              </li>
+                              </li>
+                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                 </form>
                               </li>
                               @else
 
@@ -116,9 +119,7 @@
          </div>
       </header>
       <div class="container">
-    
-  
-  
+   
     <h1>Comments</h1>
   
   @auth

@@ -127,8 +127,7 @@
    
       @if ($editMode)
 
-      <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data" class="profile-form">
-    @csrf
+     
     
       <!-- Foto Upload -->
       <div class="form-group">
@@ -175,11 +174,11 @@
       <!-- Toon gebruikersinformatie zonder invulvelden -->
       <div class="profile-info">
          <img src="{{ asset('storage/' . $user -> profile_photo) }}" alt="Profielfoto">
-         <p>Naam: {{ $user->firstname }}</p>
-         <p>Voornaam: {{ $user->lastname }}</p>
-         <p>Geboortedatum: {{ $user->birthdate }}</p>
-         <p>Geslacht: {{ $user->sex }}</p>
-         <p>Biografie: {{ $user->biography }}</p>
+         <p><strong> Naam: </strong> {{ $user->firstname }}</p>
+         <p><strong>Voornaam: <strong> {{ $user->lastname }}</p>
+         <p> <strong> Geboortedatum: <strong> {{ $user->birthdate }}</p>
+         <p><strong> Geslacht: <strong> {{ $user->sex }}</p>
+         <p><strong> Biografie: <strong> {{ $user->biography }}</p>
       </div>
    @endif
 
