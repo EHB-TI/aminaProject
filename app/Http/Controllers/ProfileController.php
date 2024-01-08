@@ -7,20 +7,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use App\Models\User;
 use Auth;
 
 
 class ProfileController extends Controller
 {
-    // Deze methode toont de profielpagina
     public function showProfile()
     {
         $user = Auth::User(); // Haal de huidige ingelogde gebruiker op
-        // Stuur de gebruikersinformatie en de editMode-status naar de view 
-        $editMode = true; // Stel deze in op 'true' of 'false' afhankelijk van de voorwaarde die je wilt controleren
-        
-        return view('profile', compact('user', 'editMode'));
+        redirect ('profile', compact('user')); // Stuur naar de view
     }
+
 
     // Deze methode verwerkt de update van het profiel
     public function updateProfile(Request $request)

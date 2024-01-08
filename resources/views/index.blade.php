@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>milina</title>
+      <title>Lashes By Amina</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -139,10 +139,10 @@
                               <img class="bann_img" src="images/lashesOne.jpg" alt="#"/>
                            </div>
                            <div class="col-md-6">
-                              <span>01/03</span>
+                              <span>4D volume</span>
                               <h1>Amina Lashes Salon </h1>
-                              <p>come and embellish your beautiful eyes </p>
-                              <a class="get_btn" href="Javascript:void(0)" role="button">Get Appoinment</a>
+                              <p>come and embellish your beautiful eyes, without appointment </p>
+                             
                            </div>
                         </div>
                      </div>
@@ -153,13 +153,13 @@
                      <div class="carousel-caption relative">
                         <div class="row d_flex">
                            <div class="col-md-6">
-                              <img class="bann_img" src="images/lashesOne.jpg" alt="#"/>
+                              <img class="bann_img" src="images/volumeB.jpg" alt="#"/>
                            </div>
                            <div class="col-md-6">
-                              <span>02/03</span>
+                              <span>brazilian volume</span>
                               <h1>Amina Lashes Salon </h1>
-                              <p>come and embellish your beautiful eyes </p>
-                              <a class="get_btn" href="Javascript:void(0)" role="button">Get Appoinment</a>
+                              <p>come and embellish your beautiful eyes, without appointment </p>
+                              
                            </div>
                         </div>
                      </div>
@@ -170,13 +170,13 @@
                      <div class="carousel-caption relative">
                         <div class="row d_flex">
                            <div class="col-md-6">
-                              <img class="bann_img" src="images/lashesOne.jpg" alt="#"/>
+                              <img class="bann_img" src="images/natural.jpg" alt="#"/>
                            </div>
                            <div class="col-md-6">
-                              <span>03/03</span>
+                              <span>natural eyelashes</span>
                               <h1>Amina Lashes Salon </h1>
-                              <p>come and embellish your beautiful eyes </p>
-                              <a class="get_btn" href="Javascript:void(0)" role="button">Get Appoinment</a>
+                              <p>come and embellish your beautiful eyes, without appointment </p>
+                            
                            </div>
                         </div>
                      </div>
