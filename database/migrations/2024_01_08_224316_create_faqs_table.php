@@ -14,13 +14,10 @@ return new class extends Migration
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
             $table->string('question');
-            $table->text('answer')->nullable();
+            $table->text('answer');
             $table->timestamps();
-
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
-        });
+      });
     }
-
     /**
      * Reverse the migrations.
      */

@@ -2,85 +2,55 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 use App\Models\User;
-use Auth;
-
 
 class ProfileController extends Controller
 {
-
-    public function __construct()
+    // Toon het profiel van de ingelogde gebruiker
+    public function show()
     {
-        // Zorg ervoor dat de gebruiker ingelogd moet zijn om deze controller te gebruiken
-        $this->middleware('auth');
+        dd(Auth::check()); // Dit zal 'true' dumpen als een gebruiker is ingelogd, 'false' anders.
+
+        $user = Auth::user();
+    
+        return view('profile.show', compact('user'));
     }
 
-    public function showProfile(User $user)
+    // Toon het bewerkingsformulier voor de ingelogde gebruiker
+    public function edit()
     {
-         
-        return view ('profile', compact('user')); // Stuur naar de view
+        $user = Auth::user();
+        return view('profile.edit', compact('user'));
     }
 
-
-    // Deze methode verwerkt de update van het profiel
-    public function updateProfile(Request $request)
+    // Verwerk het bijwerken van het profiel
+    public function update(Request $request, User $user)
     {
-        // Valideer eerst de input
-        $validator = Validator::make($request->all(), [
+        $user = Auth::user();
+        $data = $request->validate([
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'birthdate' => 'required|date',
-            'sex' => 'required|string|in:male,female,other',
+            'sex' => 'required|string',
             'biography' => 'nullable|string',
-            'profile_photo' => 'nullable|image|max:1999', // Maximaal ongeveer 2MB
+            'profile_photo' => 'nullable|image|max:1999',
         ]);
 
-        // Controleer of de validatie faalt
-        if ($validator->fails()) {
-            return redirect()->back()
-                             ->withErrors($validator)
-                             ->withInput();
-        }
-
-        // Haal de huidige ingelogde gebruiker op
-        $user = Auth::user();
-
-        // Update de gebruiker met de gevalideerde data
-        $user->firstname = $request->firstname;
-        $user->lastname = $request->lastname;
-        $user->birthdate = $request->birthdate;
-        $user->sex = $request->sex;
-        $user->biography = $request->biography;
-
-        // Als een profielfoto is geüpload, verwerk deze
         if ($request->hasFile('profile_photo')) {
-            // Sla de afbeelding op en genereer een unieke bestandsnaam
-            $filenameWithExt = $request->file('profile_photo')->getClientOriginalName();
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            $extension = $request->file('profile_photo')->getClientOriginalExtension();
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-
-            // Upload de afbeelding
-            $path = $request->file('profile_photo')->storeAs('public/profile_photos', $fileNameToStore);
-
-            // Verwijder oude afbeelding indien aanwezig
-            if ($user->profile_photo) {
-                Storage::delete('public/profile_photos/'.$user->profile_photo);
+            // Verwijder de oude foto als deze bestaat
+            if ($user->profile_photo && Storage::disk('public')->exists($user->profile_photo)) {
+                Storage::disk('public')->delete($user->profile_photo);
             }
 
-            // Sla de nieuwe afbeeldingsnaam op in de database
-            $user->profile_photo = $fileNameToStore;
+            // Sla de nieuwe foto op
+            $path = $request->file('profile_photo')->store('profile_photos', 'public');
+            $data['profile_photo'] = $path;
         }
 
-        // Sla de geüpdatete gebruiker op
-        $user->save();
-
-        // Redirect terug naar de profielpagina met een successmelding
-        return redirect()->route('profile')->with('success', 'Profiel bijgewerkt!');
+        $user->update($data);
+        return back()->with('success', 'Profiel bijgewerkt');
     }
 }

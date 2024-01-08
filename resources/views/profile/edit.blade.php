@@ -33,13 +33,11 @@
    <body class="main-layout">
       <!-- loader  -->
       <div class="loader_bg">
-         <div class="loader"><img src="images/logo.gif" alt="#"/></div>
+         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
       </div>
       <!-- end loader -->
       <!-- header -->
-      <header>
-         <!-- header inner -->
-         <div class="header">
+      <div class="header">
             <div class="container-fluid">
                <div class="row">
                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
@@ -71,12 +69,19 @@
                                  <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                               </li>
 
+                              
                               @auth 
                               <li class="nav-item">
                               <a class="nav-link" href="{{ route('comments') }}">comments</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('profile') }}">Profile</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('faq') }}">FAQ</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('logout') }}"
@@ -88,7 +93,6 @@
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                  </form>
-                              </li>
                               </li>
                               @else
                               <li class="nav-item">
@@ -112,58 +116,45 @@
             </div>
          </div>
       </header>
-      <!-- end header -->
-      
       <div class="container">
-    <h1>FAQs</h1>
-    @foreach ($faqs as $faq)
-        <div>
-            <h2>{{ $faq->question }}</h2>
-            <p>{{ $faq->answer }}</p>
+    <h1>Profiel Bewerken</h1>
+    <form action="{{ route('profile.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PATCH')
+        <div class="form-group">
+            <label for="profile_photo">Profielfoto</label>
+            <input type="file" name="profile_photo" class="form-control-file">
         </div>
-    @endforeach
+        
+        <div class="form-group">
+            <label for="firstname">Voornaam</label>
+            <input type="text" name="firstname" class="form-control" value="{{ $user->firstname }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="lastname">Achternaam</label>
+            <input type="text" name="lastname" class="form-control" value="{{ $user->lastname }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="birthdate">Geboortedatum</label>
+            <input type="date" name="birthdate" class="form-control" value="{{ $user->birthdate }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="sex">Geslacht</label>
+            <select name="sex" class="form-control">
+                <option value="male" {{ $user->sex == 'male' ? 'selected' : '' }}>Man</option>
+                <option value="female" {{ $user->sex == 'female' ? 'selected' : '' }}>Vrouw</option>
+                <option value="other" {{ $user->sex == 'other' ? 'selected' : '' }}>Overig</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="biography">Biografie</label>
+            <textarea name="biography" class="form-control">{{ $user->biography }}</textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Profiel Bijwerken</button>
+    </form>
 </div>
-
-      <!--  footer -->
-      <footer>
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <ul class="conta">
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>Quai de l'Industrie 170, 1070 Anderlecht</li>
-                        <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 0488714235</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> LashesByeAmina@hotmail.com</a></li>
-                     </ul>
-                  </div>
-                  <div class=" col-md-3 col-sm-6">
-                     <h3>Welcome</h3>
-                     <p class="variat">you will always be welcome in our beauty salon</p>
-                  </div>
-                  <div class=" col-md-3 col-sm-6">
-                     <h3>Lashes Salon </h3>
-                     <p class="variat" >always present to have a beautiful look</p>
-                  </div>
-                  <div class="col-md-2 col-sm-6">
-                     <h3>Useful Link</h3>
-                     <ul class="link_menu">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="{{ route('about') }}"> About</a></li>
-                        <li><a href="{{ route('we-do') }}">What we do</a></li>
-                        <li><a href="{{ route('pricing') }}">Pricing</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
-</html>

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -118,82 +116,17 @@
             </div>
          </div>
       </header>
-      <!-- end header inner -->
-      <!-- end header -->
-    @php
-         $editMode = $editMode ?? false; 
-    @endphp
 
    
-      @if ($editMode)
-
-     
-    
-      <!-- Foto Upload -->
-      <div class="form-group">
-         <label for="profile_photo">Profielfoto</label>
-         <input type="file" name="profile_photo" class="form-control-file">
-      </div>
-      
-      
-      <!-- Naam en Voornaam -->
-      <div class="form-group">
-         <label for="firstname">Voornaam</label>
-         <input type="text" name="firstname" class="form-control">
-      </div>
-      <div class="form-group">
-         <label for="lastname">Naam</label>
-         <input type="text" name="lastname" class="form-control">
-      </div>
-      <div cla
-      ss="form-group">
-         <label for="birthdate">Geboortedatum</label>
-         <input type="date" name="birthdate" class="form-control">
-      </div>
-      <div class="form-group">
-         <label for="sex">Geslacht</label>
-         <select name="sex" class="form-control">
-               <option value="male">Man</option>
-               <option value="female">Vrouw</option>
-               <option value="other">Overig</option>
-         </select>
-      </div>
-      
-      <!-- Biografie -->
-      <div class="form-group">
-         <label for="biography">Biografie</label>
-         <textarea name="biography" class="form-control"></textarea>
-      </div>
-      
-      <!-- Geslacht -->
-      
-      <!-- Verzendknop -->
-      <button type="submit" class="btn btn-primary">Profiel bijwerken</button>
-
-   @else
-      <!-- Toon gebruikersinformatie zonder invulvelden -->
-      <div class="profile-info">
-         <img src="{{ asset('storage/' . $user -> profile_photo) }}" alt="Profielfoto">
-         <p><strong> Naam: </strong> {{ $user->firstname }}</p>
-         <p><strong>Voornaam: <strong> {{ $user->lastname }}</p>
-         <p> <strong> Geboortedatum: <strong> {{ $user->birthdate }}</p>
-         <p><strong> Geslacht: <strong> {{ $user->sex }}</p>
-         <p><strong> Biografie: <strong> {{ $user->biography }}</p>
-      </div>
-   @endif
-
-   </form>
-</form>
-      <!-- end contact -->
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
-
-</html>
-
+      <div class="container">
+    <h1>Profielpagina</h1>
+    <div class="profile-info">
+        <img src="{{ Storage::url($user->profile_photo) }}" alt="Profielfoto" class="profile-photo">
+        <p><strong>Naam:</strong> {{ $user->firstname }}</p>
+        <p><strong>Achternaam:</strong> {{ $user->lastname }}</p>
+        <p><strong>Geboortedatum:</strong> {{ $user->birthdate }}</p>
+        <p><strong>Geslacht:</strong> {{ $user->sex }}</p>
+        <p><strong>Biografie:</strong> {{ $user->biography }}</p>
+    </div>
+    <a href="{{ route('profile.edit') }}" class="btn btn-primary">Bewerk Profiel</a>
+</div>

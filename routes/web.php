@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProfileController;
 
 
 Route::get('/', function () {
@@ -24,16 +25,14 @@ Route::middleware(['auth'])->group(function () {
     // Eigen POST route voor het uitloggen
     Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
-    Route::get('/profile', 'ProfileController@showProfile')->name('profile');
-
-    Route::post('/profile/update', 'ProfileController@updateProfile')->name('profile.update');
-    Route::post('/profile', 'ProfileController@updateProfile')->name('profile.update');
+  
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
 
     Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
-    Route::get('/faq', [FaqController::class, 'showFaq'])->name('faq');
-
-    // Voor resourceful routes
-    Route::resource('faqs', FaqController::class);
+    
+    Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 
     Route::post('/comments', [CommentController::class, 'store'])->name('comment.store');
 
@@ -63,7 +62,7 @@ Route::get('/pricing', function () {
 
 // Contact Us Page Route
 Route::get('/profile', function () {
-    return view('profile');
+    return view('profile.show');
 })->name('profile');
 
 Route::get('/login', function () {
