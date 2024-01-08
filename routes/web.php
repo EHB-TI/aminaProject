@@ -31,10 +31,12 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
 
     Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
-    
+
     Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
 
     Route::post('/comments', [CommentController::class, 'store'])->name('comment.store');
+    Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
+
 
 
 });

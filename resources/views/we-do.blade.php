@@ -11,8 +11,7 @@
             </div>
          </div>
       </div>
-      <!-- what we do  -->
-      <!-- what I do  -->
+   
       <div class="we_do slin">
          <div class="container">
             <div class="row">

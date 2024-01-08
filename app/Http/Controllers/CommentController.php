@@ -20,4 +20,11 @@ class CommentController extends Controller
     
         return back()->with('success', 'Commentaar succesvol toegevoegd!');
     }
+    public function index() {
+        $comments = Comment::with('user') // Zorg ervoor dat je 'user' relatie in je Comment model hebt gedefinieerd
+                        ->orderBy('created_at', 'desc') // Optioneel: sorteer de comments
+                        ->get();
+    
+        return view('comments.index', compact('comments')); // Zorg ervoor dat je de juiste view naam gebruikt
+    }
 }

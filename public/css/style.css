@@ -1097,7 +1097,7 @@ ul.link_menu li a:hover {
  .login-logo a img {
      max-width: 100%; /* Zorg ervoor dat het logo niet te groot wordt */
      height: auto;
-     /* Voeg eventuele specifieke stijlen toe die je wilt */
+   
  }
  
  /* Stijlen specifiek voor de loginpagina navigatie-links */
@@ -1129,7 +1129,7 @@ ul.link_menu li a:hover {
  
  /* Specifieke stijlen voor de dropdown-menu */
  .login-nav .dropdown-menu {
-     right: 0; /* Zorgt ervoor dat het dropdown-menu rechts uitgelijnd is */
+     right: 0; 
  }
  
  /* Stijlen voor de 'Logout' link */
@@ -1140,7 +1140,7 @@ ul.link_menu li a:hover {
  }
  
  .login-nav .dropdown-item:hover {
-     background-color: #e9ecef; /* Nog lichtere achtergrond op hover */
+     background-color: #e9ecef; 
  }
 /**end login**/
  
@@ -1189,3 +1189,51 @@ ul.link_menu li a:hover {
  }
 
  /**end profile**/
+
+
+ .comments-container {
+     margin-top: 20px;
+ }
+ 
+ .comments-title {
+     margin-bottom: 20px;
+ }
+ 
+ .comments-form {
+     margin-bottom: 40px;
+ }
+ 
+ .comment-box {
+     margin-bottom: 15px;
+ }
+ 
+ .comment-label {
+     font-weight: bold;
+ }
+ 
+ .comment-textarea {
+     min-height: 100px;
+ }
+ 
+ .comment-submit-btn {
+     background-color: #000; /* Aangepaste kleur */
+     color: #fff;
+ }
+ 
+ .comments-list {
+     margin-top: 20px;
+ }
+ 
+ .comment {
+     padding: 10px;
+     border-bottom: 1px solid #ccc;
+ }
+ 
+ .comment-author {
+     font-weight: bold;
+ }
+ 
+ .comment-content {
+     margin-top: 5px;
+ }
+ 
