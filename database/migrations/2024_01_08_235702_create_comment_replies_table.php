@@ -11,19 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('faqs', function (Blueprint $table) {
+        Schema::create('comment_replies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('faq_category_id')->constrained('faq_categories')->onDelete('cascade');
-            $table->string('question');
-            $table->text('answer');
+            $table->foreignId('comment_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->text('body');
             $table->timestamps();
-      });
+        });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('faqs');
+        Schema::dropIfExists('comment_replies');
     }
 };

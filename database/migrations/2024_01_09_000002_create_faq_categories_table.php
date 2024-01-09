@@ -11,19 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('faqs', function (Blueprint $table) {
+        Schema::create('faq_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('faq_category_id')->constrained('faq_categories')->onDelete('cascade');
-            $table->string('question');
-            $table->text('answer');
+            $table->string('name');
             $table->timestamps();
-      });
+        });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('faqs');
+        Schema::dropIfExists('faq_categories');
     }
 };

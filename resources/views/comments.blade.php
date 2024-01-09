@@ -21,5 +21,24 @@
                      <p class="card-text"><small class="text-muted">Posted by {{ $comment->user->name }} on {{ $comment->created_at }}</small></p>
                   </div>
          @endforeach
+
+         @foreach ($comments as $comment)
+    <!-- Comment weergave -->
+    @if (auth()->check() && auth()->user()->isAdmin())
+        <form action="{{ route('comment.reply', $comment) }}" method="POST">
+            @csrf
+            <textarea name="body"></textarea>
+            <button type="submit">Antwoord</button>
+        </form>
+    @endif
+@endforeach
+
+@can('reply', $comment)
+    <form method="POST" action="{{ route('comments.reply', $comment) }}">
+        @csrf
+        <textarea name="body"></textarea>
+        <button type="submit">Antwoord</button>
+    </form>
+@endcan
                </div>
 @endsection

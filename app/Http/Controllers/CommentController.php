@@ -27,4 +27,22 @@ class CommentController extends Controller
     
         return view('comments.index', compact('comments')); // Zorg ervoor dat je de juiste view naam gebruikt
     }
+    public function reply(Request $request, Comment $comment) {
+        // Controleer of de gebruiker admin is
+        if (!auth()->user()->isAdmin()) {
+            return back()->with('error', 'Geen toestemming.');
+        }
+    
+        $request->validate([
+            'body' => 'required|string',
+        ]);
+    
+        // Antwoord opslaan
+        $comment->replies()->create([
+            'body' => $request->body,
+            'user_id' => auth()->id(),
+        ]);
+    
+        return back()->with('success', 'Antwoord succesvol toegevoegd.');
+    }
 }

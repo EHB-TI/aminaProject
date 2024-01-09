@@ -33,13 +33,29 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
     Route::get('/faqs', [FaqController::class, 'index'])->name('faqs.index');
+    Route::resource('faqs', FaqController::class)->middleware('admin');
+
 
     Route::post('/comments', [CommentController::class, 'store'])->name('comment.store');
     Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
 
+    Route::post('/comments/{comment}/reply', 'CommentController@reply')->name('comment.reply');
 
 
 });
+
+Route::middleware(['admin'])->group(function () {
+
+
+    // FAQ management
+    Route::resource('/admin/faq-categories', 'FaqCategoryController');
+    Route::resource('/admin/faqs', 'FaqController');
+
+    // Comment management
+    Route::post('/comments/{comment}/reply', 'CommentReplyController@store')->name('comments.reply');
+    Route::delete('/comments/{comment}', 'CommentController@destroy')->name('comments.destroy');
+});
+
 
 
 
