@@ -3,9 +3,13 @@
 Due to the fact that my sister and I do eyelash extensions to our clients we never really knew who our loyal clients were and of course what people thought of us so that's why I chose to create this kind of site.
 
 ## Inhoudsopgave
-
+- [GIT]
 - [Gebruik]
 - [Bronnen]
+
+## GIT
+
+-https://github.com/EHB-TI/aminaProject.git
 
 ## Gebruik
 
@@ -26,7 +30,6 @@ laravel
 - https://www.youtube.com/watch?v=P52ZNSiTu6A&ab_channel=LaravelDaily (overview of how to create a faq blade )
 - https://iamwebwiz.medium.com/how-to-send-mail-from-a-contact-form-using-laravel-972e9229a41b (contact balde send to my mail)
 - https://laracasts.com/discuss/channels/laravel/fetch-profile-data-for-the-profile-view (profile data)
-- 
 - https://chat.openai.com/ (for problems)
 
 
