@@ -19,12 +19,6 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->date('birthdate');
-            $table->string('sex');
-            $table->text('biography')->nullable();
-            $table->string('profile_photo')->nullable();
             $table->boolean('is_admin')->default(false);
                 });
     }

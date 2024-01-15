@@ -3,54 +3,52 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Profile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 
 class ProfileController extends Controller
 {
-    // Toon het profiel van de ingelogde gebruiker
     public function show()
     {
-        dd(Auth::check()); // Dit zal 'true' dumpen als een gebruiker is ingelogd, 'false' anders.
-
         $user = Auth::user();
-    
-        return view('profile.show', compact('user'));
+        $user->load('profile'); // Assuming there is a 'profile' relationship defined in the User model
+        
+        return view('profile', compact('user'));
     }
 
-    // Toon het bewerkingsformulier voor de ingelogde gebruiker
     public function edit()
     {
         $user = Auth::user();
-        return view('profile.edit', compact('user'));
+        $user->load('profile');
+        
+        return view('profile-edit', compact('user'));
     }
 
-    // Verwerk het bijwerken van het profiel
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         $user = Auth::user();
+        
+        // Validate the request data
         $data = $request->validate([
-            'firstname' => 'required|string|max:255',
-            'lastname' => 'required|string|max:255',
-            'birthdate' => 'required|date',
-            'sex' => 'required|string',
-            'biography' => 'nullable|string',
-            'profile_photo' => 'nullable|image|max:1999',
+            'profile_photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'firstname'     => 'required|string|max:255',
+            'lastname'      => 'required|string|max:255',
+            'birthdate'     => 'required|date',
+            'sex'           => 'required|in:male,female,other',
+            'biography'     => 'nullable|string',
         ]);
 
+        // Handle file upload
         if ($request->hasFile('profile_photo')) {
-            // Verwijder de oude foto als deze bestaat
-            if ($user->profile_photo && Storage::disk('public')->exists($user->profile_photo)) {
-                Storage::disk('public')->delete($user->profile_photo);
-            }
-
-            // Sla de nieuwe foto op
             $path = $request->file('profile_photo')->store('profile_photos', 'public');
             $data['profile_photo'] = $path;
         }
 
-        $user->update($data);
-        return back()->with('success', 'Profiel bijgewerkt');
+        // Update the profile
+        $user->profile()->update($data);
+
+        return redirect()->route('profile.show')->with('success', 'Profiel bijgewerkt.');
     }
 }

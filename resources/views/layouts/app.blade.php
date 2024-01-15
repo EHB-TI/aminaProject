@@ -65,12 +65,15 @@
                                  <a class="nav-link" href="{{ route('about') }}">About</a>
                               </li>
                               <li class="nav-item">
+                                 <a class="nav-link" href="{{ route('about-two') }}">About2</a>
+                              </li>
+
+                              <li class="nav-item">
                                  <a class="nav-link" href="{{ route('we-do') }}">What We do</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ route('pricing') }}">Pricing</a>
                               </li>
-                              
                               @auth 
                               <li class="nav-item">
                               <a class="nav-link" href="{{ route('comments') }}">comments</a>

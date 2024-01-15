@@ -27,9 +27,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
   
-    Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
 
     Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
@@ -68,6 +68,9 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+Route::get('/about-readme', function () {
+    return view('about-two');
+})->name('about-two');
 
 // What We Do Page Route
 Route::get('/we-do', function () {

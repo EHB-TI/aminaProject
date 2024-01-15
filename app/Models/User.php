@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function commentReplies() {
         return $this->hasMany(CommentReply::class);
     }
+    public function profile()
+{
+    return $this->hasOne(Profile::class);
+}
 }
